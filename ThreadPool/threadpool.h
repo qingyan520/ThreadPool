@@ -9,6 +9,8 @@
 #include<thread>
 #include<chrono>
 #include<string>
+#include<unordered_map>
+#include<sstream>
 
 
 #define INFO 1
@@ -32,6 +34,8 @@ static void log(std::string level, std::string message, std::string file_name, i
 
 const int TASK_MAX_THRESHOLD = 10;   //任务队列最大上限
 const int THREAD_INIT_SIZE = 8;        //线程初始化数量
+const int THREAD_CACHED_MAX_SIZE = 128;  //cached模式最大线程数量
+
 
 //线程池模式：固定模式和动态增长模式
 enum class PoolMode
@@ -176,13 +180,16 @@ private:
 class Thread
 {
 public:
-	using ThreadFunc = std::function<void()>;
+	using ThreadFunc = std::function<void(int)>;
 	Thread(ThreadFunc _func);
 	~Thread();
 
 	void start();
+	int GetId();
 private:
 	Thread::ThreadFunc func_;
+	static std::atomic_int threadId;  // 线程id
+	int id;
 };
 //线程池
 class ThreadPool
@@ -193,25 +200,34 @@ public:
 
 	void SetTaskQueMaxHold(int maxHold = TASK_MAX_THRESHOLD);  //设置任务队列数量上限
 	void SetPoolMode(PoolMode _mode);     //设置线程池模式，默认为FIXED_MODE
+	void SetThreadsMaxSize(int size= THREAD_CACHED_MAX_SIZE);     //设置cached模式最大线程数量
 
 	Result submitTask(std::shared_ptr<Task> sp);  //向任务队列中提交任务
-	void start(int size = THREAD_INIT_SIZE);                          //启动线程池
+	void start(int size = std::thread::hardware_concurrency());                          //启动线程池
 
 	ThreadPool& operator=(const ThreadPool&) = delete; //禁止线程池进行拷贝构造和赋值重载
 	ThreadPool(const ThreadPool&) = delete;
 private:
-	std::vector<std::unique_ptr<Thread>>threads_;    //线程容器，存储线程
-	std::queue<std::shared_ptr<Task>>taskQue_;  //任务队列，存储任务
+	std::unordered_map<int,std::unique_ptr<Thread>>threads_;    //线程容器，存储线程
+	std::queue<std::shared_ptr<Task>>taskQue_;       //任务队列，存储任务
+
 	std::atomic_int taskSize_;      //记录任务队列中任务地数量
 	int threadInitSize_;            //线程初始数量
 	int taskQueMaxHold_;            //任务队列任务最大值
 
-	std::mutex mtxQue_;            //保证任务队列线程安全
+	int threadsMaxSize_;            //cached模式时threadpool线程的最大值
+	std::atomic_int curthreadSize_;             //当前线程的数量
+	std::atomic_int freeThreadSize_;            //当前空闲线程的数量
+
+	std::mutex mtxQue_;                  //保证任务队列线程安全
 	std::condition_variable not_Empty;   //任务队列不空
 	std::condition_variable not_Full;    //任务队列不满
+	PoolMode mode;                       //代表线程池的模式
 
-	PoolMode mode;                    //代表线程池的模式
+	std::atomic_bool isRunning=false;          //代表线程池是否运行
 
 private:
-	void threadFunc();               //线程函数
+	void threadFunc(int threadId);               //线程函数
+
+	bool isPoolRunning();             //判断当前线程池是否运行
 };
