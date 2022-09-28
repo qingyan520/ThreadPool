@@ -1,0 +1,161 @@
+﻿  test.cpp
+C:\Users\史金伟\source\ThreadPool\ThreadPool最终版\threadpool.h(155,32): warning C4244: “参数”: 从“__int64”转换到“double”，可能丢失数据
+C:\Users\史金伟\source\ThreadPool\ThreadPool最终版\test.cpp(19): message : 查看对正在编译的函数 模板 实例化“std::future<double> ThreadPool::submitTask<double(__cdecl &)(double,double),int,__int64>(Func,int &&,__int64 &&)”的引用
+          with
+          [
+              Func=double (__cdecl &)(double,double)
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\type_traits(1558,98): warning C4244: “参数”: 从“_Cv_TiD”转换到“double”，可能丢失数据
+          with
+          [
+              _Cv_TiD=__int64
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\functional(680): message : 查看对正在编译的函数 模板 实例化“double std::invoke<double(__cdecl *&)(double,double),_Cv_TiD&,__int64&>(_Callable,_Ty1,__int64 &) noexcept(false)”的引用
+          with
+          [
+              _Cv_TiD=int,
+              _Callable=double (__cdecl *&)(double,double),
+              _Ty1=int &
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\functional(1971): message : 查看对正在编译的函数 模板 实例化“double std::_Invoker_ret<std::_Unforced>::_Call<double(__cdecl *&)(double,double),_Cv_TiD&,__int64&>(_Fx,_Cv_TiD &,__int64 &) noexcept(false)”的引用
+          with
+          [
+              _Cv_TiD=int,
+              _Fx=double (__cdecl *&)(double,double)
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\functional(2009): message : 查看对正在编译的函数 模板 实例化“double std::_Call_binder<std::_Unforced,0,1,double(__cdecl *)(double,double),_Ty2,std::tuple<>>(std::_Invoker_ret<std::_Unforced>,std::integer_sequence<size_t,0,1>,_Cv_FD &,_Cv_tuple_TiD &,_Untuple &&) noexcept(false)”的引用
+          with
+          [
+              _Ty2=std::tuple<int,__int64>,
+              _Cv_FD=double (__cdecl *)(double,double),
+              _Cv_tuple_TiD=std::tuple<int,__int64>,
+              _Untuple=std::tuple<>
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\type_traits(1547): message : 查看对正在编译的函数 模板 实例化“double std::_Binder<std::_Unforced,double (__cdecl &)(double,double),_Ty,__int64>::operator ()<>(void) noexcept(false)”的引用
+          with
+          [
+              _Ty=int
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\type_traits(1548): message : 查看对正在编译的函数 模板 实例化“double std::_Binder<std::_Unforced,double (__cdecl &)(double,double),_Ty,__int64>::operator ()<>(void) noexcept(false)”的引用
+          with
+          [
+              _Ty=int
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\functional(663): message : 查看对正在编译的函数 模板 实例化“double std::invoke<_Callable&>(std::_Binder<std::_Unforced,double (__cdecl &)(double,double),_Ty,__int64>&) noexcept(false)”的引用
+          with
+          [
+              _Callable=std::_Binder<std::_Unforced,double (__cdecl &)(double,double),int,__int64>,
+              _Ty=int
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\functional(830): message : 查看对正在编译的函数 模板 实例化“_Rx std::_Invoker_ret<_Rx>::_Call<_Callable&,>(_Fx) noexcept(false)”的引用
+          with
+          [
+              _Rx=RTtype,
+              _Callable=std::_Binder<std::_Unforced,double (__cdecl &)(double,double),int,__int64>,
+              _Fx=std::_Binder<std::_Unforced,double (__cdecl &)(double,double),int,__int64> &
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\functional(831): message : 查看对正在编译的函数 模板 实例化“_Rx std::_Invoker_ret<_Rx>::_Call<_Callable&,>(_Fx) noexcept(false)”的引用
+          with
+          [
+              _Rx=RTtype,
+              _Callable=std::_Binder<std::_Unforced,double (__cdecl &)(double,double),int,__int64>,
+              _Fx=std::_Binder<std::_Unforced,double (__cdecl &)(double,double),int,__int64> &
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\functional(830): message : 在编译 类 模板 成员函数“_Rx std::_Func_impl_no_alloc<std::_Binder<std::_Unforced,double (__cdecl &)(double,double),_Ty,__int64>,_Rx>::_Do_call(void)”时
+          with
+          [
+              _Rx=RTtype,
+              _Ty=int
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\functional(728): message : 查看对正在编译的 类 模板 实例化“std::_Func_impl_no_alloc<std::_Binder<std::_Unforced,double (__cdecl &)(double,double),_Ty,__int64>,_Ret>”的引用
+          with
+          [
+              _Ty=int,
+              _Ret=RTtype
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\functional(920): message : 查看指向正在编译的变量模板“const bool _Is_large<std::_Func_impl_no_alloc<std::_Binder<std::_Unforced,double (__cdecl&)(double,double),int,__int64>,double> >”的引用
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\functional(1051): message : 查看对正在编译的函数 模板 实例化“void std::_Func_class<_Ret>::_Reset<_Ty>(_Fx &&)”的引用
+          with
+          [
+              _Ret=RTtype,
+              _Ty=std::_Binder<std::_Unforced,double (__cdecl &)(double,double),int,__int64>,
+              _Fx=std::_Binder<std::_Unforced,double (__cdecl &)(double,double),int,__int64>
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\functional(1051): message : 查看对正在编译的函数 模板 实例化“void std::_Func_class<_Ret>::_Reset<_Ty>(_Fx &&)”的引用
+          with
+          [
+              _Ret=RTtype,
+              _Ty=std::_Binder<std::_Unforced,double (__cdecl &)(double,double),int,__int64>,
+              _Fx=std::_Binder<std::_Unforced,double (__cdecl &)(double,double),int,__int64>
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\future(491): message : 查看对正在编译的函数 模板 实例化“std::function<_Ret (void)>::function<_Ty,0>(_Fx &&)”的引用
+          with
+          [
+              _Ret=RTtype,
+              _Ty=std::_Binder<std::_Unforced,double (__cdecl &)(double,double),int,__int64>,
+              _Fx=std::_Binder<std::_Unforced,double (__cdecl &)(double,double),int,__int64>
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\future(491): message : 查看对正在编译的函数 模板 实例化“std::function<_Ret (void)>::function<_Ty,0>(_Fx &&)”的引用
+          with
+          [
+              _Ret=RTtype,
+              _Ty=std::_Binder<std::_Unforced,double (__cdecl &)(double,double),int,__int64>,
+              _Fx=std::_Binder<std::_Unforced,double (__cdecl &)(double,double),int,__int64>
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\future(1373): message : 查看对正在编译的函数 模板 实例化“std::_Packaged_state<_Ret (void)>::_Packaged_state<_Ty>(_Fty2 &&)”的引用
+          with
+          [
+              _Ret=RTtype,
+              _Ty=std::_Binder<std::_Unforced,double (__cdecl &)(double,double),int,__int64>,
+              _Fty2=std::_Binder<std::_Unforced,double (__cdecl &)(double,double),int,__int64>
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\future(1373): message : 查看对正在编译的函数 模板 实例化“std::_Packaged_state<_Ret (void)>::_Packaged_state<_Ty>(_Fty2 &&)”的引用
+          with
+          [
+              _Ret=RTtype,
+              _Ty=std::_Binder<std::_Unforced,double (__cdecl &)(double,double),int,__int64>,
+              _Fty2=std::_Binder<std::_Unforced,double (__cdecl &)(double,double),int,__int64>
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\xutility(231): message : 查看对正在编译的函数 模板 实例化“std::packaged_task<RTtype (void)>::packaged_task<_Ty,0>(_Fty2 &&)”的引用
+          with
+          [
+              _Ty=std::_Binder<std::_Unforced,double (__cdecl &)(double,double),int,__int64>,
+              _Fty2=std::_Binder<std::_Unforced,double (__cdecl &)(double,double),int,__int64>
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\xutility(238): message : 查看对正在编译的函数 模板 实例化“std::packaged_task<RTtype (void)>::packaged_task<_Ty,0>(_Fty2 &&)”的引用
+          with
+          [
+              _Ty=std::_Binder<std::_Unforced,double (__cdecl &)(double,double),int,__int64>,
+              _Fty2=std::_Binder<std::_Unforced,double (__cdecl &)(double,double),int,__int64>
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\memory(2022): message : 查看对正在编译的函数 模板 实例化“void std::_Construct_in_place<_Ty,std::_Binder<std::_Unforced,double (__cdecl &)(double,double),int,__int64>>(_Ty &,std::_Binder<std::_Unforced,double (__cdecl &)(double,double),int,__int64> &&) noexcept(false)”的引用
+          with
+          [
+              _Ty=std::packaged_task<RTtype (void)>
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\memory(2741): message : 查看对正在编译的函数 模板 实例化“std::_Ref_count_obj2<std::packaged_task<RTtype (void)>>::_Ref_count_obj2<_Ty>(_Ty &&)”的引用
+          with
+          [
+              _Ty=std::_Binder<std::_Unforced,double (__cdecl &)(double,double),int,__int64>
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\memory(2742): message : 查看对正在编译的函数 模板 实例化“std::_Ref_count_obj2<std::packaged_task<RTtype (void)>>::_Ref_count_obj2<_Ty>(_Ty &&)”的引用
+          with
+          [
+              _Ty=std::_Binder<std::_Unforced,double (__cdecl &)(double,double),int,__int64>
+          ]
+C:\Users\史金伟\source\ThreadPool\ThreadPool最终版\threadpool.h(153): message : 查看对正在编译的函数 模板 实例化“std::shared_ptr<std::packaged_task<RTtype (void)>> std::make_shared<std::packaged_task<RTtype (void)>,std::_Binder<std::_Unforced,double (__cdecl &)(double,double),_Ty,__int64>>(std::_Binder<std::_Unforced,double (__cdecl &)(double,double),_Ty,__int64> &&)”的引用
+          with
+          [
+              _Ty=int
+          ]
+C:\Users\史金伟\source\ThreadPool\ThreadPool最终版\test.cpp(19): message : 查看对正在编译的函数 模板 实例化“std::future<double> ThreadPool::submitTask<double(__cdecl &)(double,double),int,__int64>(Func,int &&,__int64 &&)”的引用
+          with
+          [
+              Func=double (__cdecl &)(double,double)
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\type_traits(1558,67): warning C4244: “参数”: 从“_Cv_TiD”转换到“double”，可能丢失数据
+          with
+          [
+              _Cv_TiD=__int64
+          ]
+  ThreadPool最终版.vcxproj -> C:\Users\史金伟\source\ThreadPool\ThreadPool最终版\x64\Debug\ThreadPool最终版.exe
